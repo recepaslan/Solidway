@@ -8,10 +8,10 @@ namespace SolidWay.SRP
 {
     public class SRP_Good
     {
-        private readonly INotificationService<Employee> _notificationService;
-        public SRP_Good(INotificationService<Employee> notificationService)
+        private readonly EmailNotificationService _emailService;
+        public SRP_Good()
         {
-            _notificationService = notificationService;
+            _emailService = new EmailNotificationService();
         }
 
         public void CreateEmployee(string firstName, string lastName, string email) {
@@ -32,7 +32,7 @@ namespace SolidWay.SRP
 
             var isCreated = SaveEmployee(newEmployee);
             if (isCreated)
-                _notificationService.Notify(newEmployee);
+                _emailService.Notify(newEmployee);
 
         }
 
