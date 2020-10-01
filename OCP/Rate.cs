@@ -11,5 +11,6 @@ namespace SolidWay.OCP
         public double RegulerRate { get; set; }
         public double OtRate { get; set; }
         public double DTRate { get; set; }
+        public double DTRate2 { get; set; }
     }
 }
